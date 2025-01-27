@@ -3,12 +3,11 @@ import h2o
 from h2o.estimators import H2OXGBoostEstimator
 import pandas as pd
 
-# Initialize H2O
+# Start the H2O cluster
 h2o.init()
 
-# Load the saved model (path where you uploaded the model)
-model_path = 'model/XGBoost_2_AutoML_1_20250127_170730'
-model = h2o.load_model(model_path)
+# Load the model from the model directory
+model = h2o.load_model('model/XGBoost_2_AutoML_1_20250127_170730')
 
 # Function for making predictions
 def make_prediction(ticker, current_ratio, gross_margin, net_profit_margin, debt_to_equity, eps, free_cash_flow):
